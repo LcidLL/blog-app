@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       flash[:success] = "Comment was successfully updated!"
       redirect_to @article
     else
-      flash.now[:error] = "There was an error updating the comment. Please check the form below."
+      flash.now[:error] = "There was an error updating the comment."
       render :edit, status: :unprocessable_entity
     end
   end
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:success] = "Comment was successfully added!"
     else
-      flash[:error] = "There was an error adding your comment. Please try again."
+      flash[:error] = "There was an error adding your comment."
     end
     
     redirect_to article_path(@article)
@@ -34,15 +34,16 @@ class CommentsController < ApplicationController
   end
 
   private
-    def comment_params
-      params.require(:comment).permit(:commenter, :body, :status)
-    end
 
-    def set_article
-      @article = Article.find(params[:article_id])
-    end
+  def comment_params
+    params.require(:comment).permit(:commenter, :body, :status)
+  end
 
-    def set_comment
-      @comment = @article.comments.find(params[:id])
-    end
+  def set_article
+    @article = Article.find(params[:article_id])
+  end
+
+  def set_comment
+    @comment = @article.comments.find(params[:id])
+  end
 end
