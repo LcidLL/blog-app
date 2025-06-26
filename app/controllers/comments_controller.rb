@@ -7,19 +7,29 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
+      flash[:success] = "Comment was successfully updated!"
       redirect_to @article
     else
+      flash.now[:error] = "There was an error updating the comment. Please check the form below."
       render :edit, status: :unprocessable_entity
     end
   end
 
   def create
-    @comment = @article.comments.create(comment_params)
+    @comment = @article.comments.build(comment_params)
+    
+    if @comment.save
+      flash[:success] = "Comment was successfully added!"
+    else
+      flash[:error] = "There was an error adding your comment. Please try again."
+    end
+    
     redirect_to article_path(@article)
   end
 
   def destroy
     @comment.destroy
+    flash[:success] = "Comment was successfully deleted!"
     redirect_to article_path(@article), status: :see_other
   end
 
