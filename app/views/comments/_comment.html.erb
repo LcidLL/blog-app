@@ -3,16 +3,16 @@
     <strong>Commenter:</strong>
     <%= comment.commenter %>
   </p>
-
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
 
-  <p>
-    <%= link_to "Destroy Comment", [comment.article, comment], data: {
+  <ul>
+    <li><%= link_to "Edit comment", edit_article_comment_path(comment.article, comment) %></li>
+    <li><%= link_to "Delete Comment", [comment.article, comment], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
-                } %>
-  </p>
+                } %></li>
+  </ul>
 <% end %>
