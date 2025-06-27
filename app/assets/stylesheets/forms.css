@@ -1,0 +1,72 @@
+.form-container {
+  background-color: #fafafa;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  appearance: none;
+}
+
+input[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+}
+
+.error-message {
+  color: #d00;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,18 +1,18 @@
 <% unless comment.archived? %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
+  <div class="comment">
+    <div class="comment-meta">
+      <strong>Commenter:</strong> <%= comment.commenter %>
+    </div>
+    <div class="comment-body">
+      <strong>Comment:</strong> <%= comment.body %>
+    </div>
 
-  <ul>
-    <li><%= link_to "Edit comment", edit_article_comment_path(comment.article, comment) %></li>
-    <li><%= link_to "Delete Comment", [comment.article, comment], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %></li>
-  </ul>
+    <ul class="comment-actions">
+      <li><%= link_to "Edit comment", edit_article_comment_path(comment.article, comment) %></li>
+      <li><%= link_to "Delete Comment", [comment.article, comment], data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+    </ul>
+  </div>
 <% end %>

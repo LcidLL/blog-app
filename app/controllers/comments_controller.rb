@@ -16,12 +16,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @article.comments.build(comment_params)
+    @comment = @article.comments.create(comment_params)
     
     if @comment.save
       flash[:success] = "Comment was successfully added!"
     else
-      flash[:error] = "There was an error adding your comment."
+      flash[:error] = "There was an error adding your comment. Body is too short (minimum: 10 characters)"
     end
     
     redirect_to article_path(@article)

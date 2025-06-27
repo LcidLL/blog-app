@@ -1,0 +1,23 @@
+.flash-success,
+.flash-error,
+.flash-notice {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid;
+  background-color: #f9f9f9;
+}
+
+.flash-success {
+  border-left-color: #000;
+  color: #000;
+}
+
+.flash-error {
+  border-left-color: #666;
+  color: #333;
+}
+
+.flash-notice {
+  border-left-color: #999;
+  color: #000;
+}
