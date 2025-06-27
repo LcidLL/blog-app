@@ -12,10 +12,10 @@
 
 <div class="comments-section">
   <h2>Comments</h2>
-  <%= render @article.comments %>
+  <%= render @article.comments.select { |comment| comment.persisted? }, article: @article, comment: @comment %>
 
   <div class="add-comment-section">
   <h2>Add a comment:</h2>
-  <%= render "comments/form", article: @article %>
+  <%= render "comments/form", article: @article, comment: @comment %>
   </div>
 </div>

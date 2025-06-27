@@ -8,8 +8,8 @@
     </div>
 
     <ul class="comment-actions">
-      <li><%= link_to "Edit comment", edit_article_comment_path(comment.article, comment) %></li>
-      <li><%= link_to "Delete Comment", [comment.article, comment], data: {
+      <li><%= link_to "Edit comment", edit_article_comment_path(article, comment) %></li>
+      <li><%= link_to "Delete Comment", [article, comment], data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>
